@@ -8,6 +8,7 @@ let
 in
 {
 
+  beef = callPackage ./beef { inherit causal-source; };
   ptee = callPackage ./ptee { inherit causal-source; };
 
 }
