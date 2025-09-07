@@ -7,7 +7,7 @@
 
 stdenv.mkDerivation(finalAttrs: {
   pname = "ptee";
-  version = "0-unstable-2025-07-02";
+  version = causal-source.version;
 
   #src = import ../causal-source.nix { inherit fetchzip lib; fileset = [ ./ptee.c ]; };
   src = lib.sources.sourceByRegex causal-source [ "^Makefile$" "^ptee\\.c$" "^man1$" "^man1/ptee\\.1$" ];
