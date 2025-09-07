@@ -15,6 +15,8 @@ stdenv.mkDerivation (finalAttrs:{
   dontUnpack = false;
 
   installPhase = ''
+    sed '/^include/d' bin/Makefile -i
+    sed 's/^meta: .*$/meta: /' bin/Makefile -i
     cp -r bin/ $out/
   '';
 })
