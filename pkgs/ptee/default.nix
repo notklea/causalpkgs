@@ -1,15 +1,19 @@
 {
   stdenv,
-  gcc,
   lib,
-  fetchzip,
+  gcc,
+  causal-source,
 }:
 
 stdenv.mkDerivation {
   pname = "ptee";
   version = "0-unstable-2025-07-01";
 
-  src = import ../causal-source.nix { inherit fetchzip lib; fileset = [ ./ptee.c ]; };
+  #src = import ../causal-source.nix { inherit fetchzip lib; fileset = [ ./ptee.c ]; };
+  src = lib.fileset.toSource {
+    root = causal-source;
+    fileset = [ ./ptee.c ./man1/ptee.1 ];
+  };
   buildInputs = [ gcc ];
 
   #patchPhase = ''
