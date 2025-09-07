@@ -17,6 +17,7 @@ in
   enc = callPackage ./enc { inherit causal-source; };
   git-comment = callPackage ./git-comment { inherit causal-source; };
   glitch = callPackage ./glitch { inherit causal-source; };
+  hilex = callPackage ./hilex { inherit causal-source; };
   htagml = callPackage ./htagml { inherit causal-source; };
   modem = callPackage ./modem { inherit causal-source; };
   mtags = callPackage ./mtags { inherit causal-source; };
