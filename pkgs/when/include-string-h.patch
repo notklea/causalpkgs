@@ -1,0 +1,11 @@
+--- a/when.y
++++ b/when.y
+@@ -24,6 +24,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <strings.h>
++#include <string.h>
+ #include <time.h>
+ 
+ static void yyerror(const char *str);
+

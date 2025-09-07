@@ -15,8 +15,9 @@ stdenv.mkDerivation (finalAttrs:{
   dontUnpack = false;
 
   installPhase = ''
-    sed '/^include/d' bin/Makefile -i
-    sed 's/^meta: .*$/meta: /' bin/Makefile -i
+    sed -e '/^include/d' -e 's/^meta: .*$/meta: /' bin/Makefile -i
+    substituteInPlace bin/Makefile \
+      --replace-fail "-lcurses" "-lncurses"
     cp -r bin/ $out/
   '';
 })
