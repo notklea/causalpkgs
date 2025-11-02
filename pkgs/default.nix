@@ -13,6 +13,7 @@ in
   bit = callPackage ./bit { inherit causal-source; };
   c = callPackage ./c { inherit causal-source; };
   dehtml = callPackage ./dehtml { inherit causal-source; };
+  downgrade = callPackage ./downgrade { inherit causal-source; };
   dtch = callPackage ./dtch { inherit causal-source; };
   enc = callPackage ./enc { inherit causal-source; };
   git-comment = callPackage ./git-comment { inherit causal-source; };
